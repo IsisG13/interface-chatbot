@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLock, faUserPen } from "@fortawesome/free-solid-svg-icons";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +22,8 @@ export default function Home() {
         </div>
 
         <div className={styles.form}>
-        <input type="text" placeholder="Usuário/E-mail* " required />
-        <input type="password" placeholder="Senha*" required/>
+        <input type="text" placeholder="Usuário/E-mail* " required /> <FontAwesomeIcon icon={faUserPen} className={styles.icon1} />
+        <input type="password" placeholder="Senha*" required/> <FontAwesomeIcon icon={faLock} className={styles.icon2} />
 
         <button type="submit">Enviar</button>
         </div>
