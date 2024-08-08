@@ -1,0 +1,36 @@
+.main img {
+  padding-top: 6rem;
+  width: 29%;
+  height: 255px;
+}
+
+.main h1 {
+  width: 44%;
+  margin-left: 28%;
+}
+
+.form {
+  display: grid;
+  gap: 15px;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.form input {
+  height: 45px;
+  padding-left: 3%;
+  text-align: left;
+  border-radius: 10px;
+  border: 1px solid #b8b6b6;
+}
+
+.form button {
+  cursor: pointer;
+  height: 45px;
+  background: #7900CB;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
