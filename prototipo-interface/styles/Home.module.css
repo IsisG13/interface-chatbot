@@ -35,16 +35,9 @@
   text-transform: uppercase;
 }
 
-.icon1, .icon2 {
+.icon {
+    width: 2.5%;
     color: #a19f9f;
     margin-top: -8%;
     margin-left: 93%;
-}
-
-.icon1 {
-  width: 3%;
-}
-
-.icon2 {
-  width: 2%;
 }

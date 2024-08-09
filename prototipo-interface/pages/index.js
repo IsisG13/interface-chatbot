@@ -1,12 +1,34 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLock, faUserPen } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserPen, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { router } from "next/router";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const submit = () => {
+    if (username && password) {
+      const nome = getNomeDoEmail(username); // Extrai o nome  
+      router.push(`/Cardapio?user=${encodeURIComponent(nome)}`); // Passa o nome para o cardápio  
+    } else {
+      alert("Preencha o campo de e-mail");
+    }
+  };
+
+  const getNomeDoEmail = (username) => {
+    return username.split('@')[0]; // Pega o nome antes do '@'  
+  };
+
+  const visible = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <>
       <Head>
@@ -15,17 +37,32 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main} >
+      <main className={styles.main}>
         <div className="">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVG2gpz84zCp-3Fr4zZxHgfLeqxgbe_JUZw&s" alt="Logo da PrefiroDelivery"/>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVG2gpz84zCp-3Fr4zZxHgfLeqxgbe_JUZw&s" alt="Logo da PrefiroDelivery" />
           <h1>Entre na sua conta para começar.</h1>
         </div>
 
         <div className={styles.form}>
-        <input type="text" placeholder="Usuário/E-mail* " required /> <FontAwesomeIcon icon={faUserPen} className={styles.icon1} />
-        <input type="password" placeholder="Senha*" required/> <FontAwesomeIcon icon={faLock} className={styles.icon2} />
+          <input id="username" 
+          type="text" 
+          placeholder="Usuário/E-mail*" 
+          value={username} 
+          onChange={(e) => setUsername(e.target.value)} required 
+          /> <FontAwesomeIcon icon={faUserPen} className={styles.icon} />
 
-        <button type="submit">Enviar</button>
+          <input 
+          type={showPassword ? "text" : "password"} 
+          placeholder="Senha*" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} required 
+          />
+          <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash}
+            className={styles.icon}
+            onClick={visible}
+          />
+
+          <button onClick={submit} type="submit">Enviar</button>
         </div>
       </main>
     </>
