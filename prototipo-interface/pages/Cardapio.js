@@ -1,12 +1,27 @@
 import Head from "next/head";
-import { useRouter } from 'next/router';  
-
-import styles from "@/styles/Cardapio.module.css";  
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';  
+import { useRouter } from 'next/router';
+import styles from "@/styles/Cardapio.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightToBracket, faBell, faCircleUser, faClone, faList, faMagnifyingGlass, faMessage, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Cardapio() {
-    const router = useRouter();  
+    const router = useRouter();
     const { user } = router.query;
+    const [isToggled, setIsToggled] = useState(false);
+
+    const toggleSwitch = () => {
+        setIsToggled(prevState => !prevState);
+    };
+
+    const handleCheckboxChange = (e) => {
+        setIsToggled(e.target.checked);
+    };
+
+    const logout = () => {
+        router.push("/");
+    }
 
     return (
         <>
@@ -17,12 +32,94 @@ export default function Cardapio() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
-                <div>
-                    <h1>Bem vindo(a), {user}!</h1>
-                </div>
+            <div className={styles.interface}>
+                <main>
+                    <div className={styles.head}>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVG2gpz84zCp-3Fr4zZxHgfLeqxgbe_JUZw&s" alt="Logog da prefiro delivery" />
+                        <FontAwesomeIcon icon={faArrowRightToBracket} className={styles.icon} onClick={logout} />
+                        <h1>Bem vindo(a), {user}!</h1>
+                        <p>Prefiro Delivery</p>
+                    </div>
+                    <hr />
 
-            </main>
+                    <div className={styles.aboutBot}>
+                        <div
+                            className={`${styles.bolinha} ${isToggled ? styles.bolinhaOn : styles.bolinhaOff}`}
+                        ></div>
+                        <span className={isToggled ? styles.botLigado : styles.botDesligado}>
+                            {isToggled ? 'Bot Ligado' : 'Bot Desligado'}
+                        </span>
+
+                        {/* Renderização condicional dos spans */}
+                        {isToggled && (
+                            <div className={styles.span}>
+                                <span className={styles.span1}>1</span>
+                                <span className={styles.span2}>0</span>
+                                <span className={styles.span3}>0</span>
+                            </div>
+                        )}
+                        {/* Renderização condicional dos spans */}
+                        {isToggled && (
+                            <div className={styles.span}>
+                                <span className={styles.span1}>1</span>
+                                <span className={styles.span2}>0</span>
+                                <span className={styles.span3}>0</span>
+                            </div>
+                        )}
+
+                        <div className={styles.toggleSwitch} onClick={toggleSwitch}>
+                            <input
+                                type="checkbox"
+                                className={styles.checkbox}
+                                checked={isToggled}
+                                readOnly
+                            />
+                            <span className={styles.slider}></span>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div className={styles.inputMessage}>
+                        <input type="text" placeholder="Link do Catálogo Web" />
+                        <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icons} />
+                        <FontAwesomeIcon icon={faClone} className={styles.icons} />
+                        <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.icons} />
+                    </div>
+                    <hr />
+
+                </main>
+
+                <div className={styles.contatos}>
+                    <div className={styles.conteudoContatos}>
+                        <FontAwesomeIcon icon={faCircleUser} className={styles.iconContato} />
+                        <h2>Selecione um contato para ver suas informações</h2>
+                    </div>
+                </div>
+                <hr />
+
+                <footer className={styles.footer}>
+                    <button>
+                        <FontAwesomeIcon icon={faMessage} className={styles.footerIcon} /> <br/>
+                        <p>Atendimento</p>
+                    </button>
+
+                    <button>
+                        <FontAwesomeIcon icon={faList} className={styles.footerIcon} /> <br/>
+                        <p>Pedidos</p>
+                    </button>
+
+                    <button>
+                        <FontAwesomeIcon icon={faBell} className={styles.footerIcon} /> <br/>
+                        <p>Notificações</p>
+                    </button>
+                    <Link target="_blank" href="https://www.prefirodelivery.com.br/">
+                        <button>
+                            <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.footerIcon} /> <br/>
+                            <p>Abrir Portal</p>
+                        </button>
+                    </Link>
+                </footer>
+            </div>
         </>
     )
 }

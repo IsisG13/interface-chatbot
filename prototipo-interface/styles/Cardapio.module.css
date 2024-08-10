@@ -1,0 +1,548 @@
+.interface {
+    width: 50%;
+}
+
+.head img {
+    width: 6%;
+    margin-left: 14%;
+    padding-right: 30%;
+}
+
+.head h1 {
+    font-size: 94%;
+    margin: -5% 0 -1.9% 5%;
+}
+
+.head p {
+    font-size: 74%;
+    color: grey;
+    margin: 1.5% 0 2% -0.5%;
+}
+
+.icon {
+    cursor: pointer;
+    width: 2%;
+    color: #a19f9f;
+    margin-bottom: 2%;
+}
+
+.toggleSwitch {
+    position: relative;
+    display: table;
+    margin-top: -2.5%;
+    width: 6%;
+    height: 29px;
+    margin-left: 71%;
+    margin-bottom: 0%;
+}
+
+.toggleSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #00A37C;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.bolinha {
+    width: 2%;
+    height: 17px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 0.5%;
+    margin-right: 10px;
+}
+
+.bolinhaOn {
+    background-color: green;
+}
+
+.bolinhaOff {
+    background-color: #c0bdbd;
+}
+
+.botLigado {
+    color: #00A37C;
+    font-size: 86%;
+    font-weight: bold;
+    margin-right: 10.5%;
+}
+
+.botDesligado {
+    font-weight: bold;
+    color: #bbbaba;
+    font-size: 86%;
+    margin-right: 8%;
+}
+
+
+.span1,
+.span2,
+.span3 {
+    font-weight: bold;
+    padding: 1px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-1680%, 0);
+    position: fixed;
+    border-radius: 50px;
+    display: inline-flex;
+    width: 1.3%;
+    justify-content: center;
+    margin: 0;
+}
+
+
+.span1 {
+    margin-left: 4%;
+    color: #00A37C;
+    background-color: #E3F9E8;
+}
+
+.span2 {
+    margin-left: 5.5%;
+    color: #BE8362;
+    background-color: #FDEDD4;
+}
+
+.span3 {
+    margin-left: 7%;
+    color: #6671B4;
+    background-color: #DAE9FA;
+}
+
+.inputMessage {
+    display: flex;
+    margin-left: 37%;
+    width: 100%;
+}
+
+.inputMessage input {
+    border: none;
+    width: 26%;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.icons {
+    margin: 1%;
+    cursor: pointer;
+    width: 2%;
+    color: #a19f9f;
+    margin-bottom: 1%;
+}
+
+.contatos {
+    background: #F7FAFB;
+    height: 45vh;
+    margin-bottom: -1.1%;
+    margin-top: -0.9%;
+    color: lightgrey;
+    text-align: center;
+    padding-top: 30%;
+}
+
+.contatos h2 {
+    margin-left: 25%;
+    width: 50%;
+}
+
+.iconContato {
+    width: 18%;
+}
+
+.conteudoContatos {
+    margin-top: -5%;
+}
+
+.footer button {
+    color: #80818A;
+    margin-left: 2%;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.footer button:hover {
+    color: #7900CB;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footerIcon {
+    width: 20%;
+    height: 20px;
+}
+
+@media (max-width: 800px) {
+    .interface {
+        width: 100%;
+    }
+
+    .head img {
+        width: 6%;
+        margin-left: 14%;
+        padding-right: 30%;
+    }
+
+    .head h1 {
+        font-size: 94%;
+        margin: -5% 0 -1.9% 5%;
+    }
+
+    .head p {
+        font-size: 74%;
+        color: grey;
+        margin: 1.5% 0 0% -0.5%;
+    }
+
+    .icon {
+        cursor: pointer;
+        width: 2%;
+        color: #a19f9f;
+        margin-bottom: 2%;
+    }
+
+    .toggleSwitch {
+        position: relative;
+        display: table;
+        margin-top: -2.5%;
+        width: 8%;
+        height: 28px;
+        margin-left: 69%;
+        margin-bottom: 0%;
+    }
+
+    .toggleSwitch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50%;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #00A37C;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(26px);
+    }
+
+    .bolinha {
+        width: 2%;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .bolinhaOn {
+        background-color: green;
+    }
+
+    .bolinhaOff {
+        background-color: #bbbaba;
+    }
+
+    .botLigado {
+        color: #00A37C;
+        font-size: 86%;
+        font-weight: bold;
+        margin-right: 10.5%;
+    }
+
+    .botDesligado {
+        font-weight: bold;
+        color: #bbbaba;
+        font-size: 86%;
+        margin-right: 8%;
+    }
+
+    /* .span1,
+    .span2,
+    .span3 {
+        font-weight: bold;
+        padding: 1px;
+        margin: 2px;
+        margin-top: -20.5%;
+        top: 25%;
+        border-radius: 50px;
+        display: inline-flex;
+        width: 2%;
+        justify-content: center;
+    } */
+
+    .span1,
+    .span2,
+    .span3 {
+        font-weight: bold;
+        padding: 1px;
+        top: 8%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        position: fixed;
+        border-radius: 50px;
+        display: inline-flex;
+        width: 1.3%;
+        justify-content: center;
+        margin: 0;
+    }
+
+
+    .span1 {
+        margin-left: 9%;
+        color: #00A37C;
+        background-color: #E3F9E8;
+    }
+
+    .span2 {
+        margin-left: 12%;
+        color: #BE8362;
+        background-color: #FDEDD4;
+    }
+
+    .span3 {
+        margin-left: 15%;
+        color: #6671B4;
+        background-color: #DAE9FA;
+    }
+
+    .inputMessage {
+        display: flex;
+        margin-left: 38%;
+        width: 100%;
+    }
+
+    .inputMessage input {
+        border: none;
+        width: 26%;
+        text-align: left;
+        padding-left: 1%;
+    }
+
+    .icons {
+        margin: 1%;
+        cursor: pointer;
+        width: 2%;
+        color: #a19f9f;
+        margin-bottom: 1%;
+    }
+
+    .contatos {
+        background: #F7FAFB;
+        height: 52vh;
+        margin-bottom: -1.1%;
+        margin-top: -0.9%;
+        color: lightgrey;
+        text-align: center;
+        padding-top: 30%;
+    }
+
+    .contatos h2 {
+        margin-left: 25%;
+        width: 50%;
+    }
+
+    .iconContato {
+        width: 18%;
+    }
+
+    .conteudoContatos {
+        margin-top: -5%;
+    }
+
+    .footer button {
+        color: #80818A;
+        margin-left: 2%;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+    }
+
+    .footer button:hover {
+        color: #7900CB;
+    }
+
+    .footer p {
+        margin: 0;
+    }
+
+    .footerIcon {
+        width: 20%;
+        height: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .head img {
+        width: 8%;
+        margin-left: -51%;
+        padding-right: 30%;
+    }
+
+    .head h1 {
+        font-size: 94%;
+        margin: -8% 0 -1.9% -35%;
+    }
+
+    .head p {
+        font-size: 74%;
+        color: grey;
+        margin: 1.5% 0 0% -46.5%;
+    }
+
+    .span1,
+    .span2,
+    .span3 {
+        font-weight: bold;
+        padding: 1px;
+        margin: 2px;
+        margin-top: -30.5%;
+        top: 25%;
+        position: absolute;
+        border-radius: 50px;
+        display: inline-flex;
+        width: 6%;
+        justify-content: center;
+    }
+
+    .span1 {
+        margin-left: 8%;
+        color: #00A37C;
+        background-color: #E3F9E8;
+    }
+
+    .span2 {
+        margin-left: 15%;
+        color: #BE8362;
+        background-color: #FDEDD4;
+    }
+
+    .span3 {
+        margin-left: 22%;
+        color: #6671B4;
+        background-color: #DAE9FA;
+    }
+
+    .toggleSwitch {
+        position: relative;
+        display: table;
+        margin-top: -5.5%;
+        width: 15%;
+        height: 28px;
+        margin-left: 81%;
+        margin-bottom: 0%;
+    }
+
+    .bolinha {
+        width: 4%;
+        height: 13px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .botDesligado {
+        font-weight: bold;
+        color: #bbbaba;
+        font-size: 86%;
+        margin-right: 63%;
+    }
+
+    .botLigado {
+        color: #00A37C;
+        font-size: 86%;
+        font-weight: bold;
+        margin-right: 64.5%;
+    }
+
+    .icons {
+        margin: 1%;
+        width: 4%;
+        color: #a19f9f;
+        margin-bottom: 1%;
+    }
+
+    .inputMessage {
+        display: flex;
+        margin-left: 4%;
+        width: 100%;
+    }
+
+    .inputMessage input {
+        border: none;
+        width: 70%;
+        text-align: left;
+        padding-left: 1%;
+    }
+
+    .contatos h2 {
+        margin-left: 9%;
+        width: 79%;
+    }
+
+    .contatos {
+        background: #F7FAFB;
+        height: 55vh;
+        margin-bottom: -1.1%;
+        margin-top: -0.9%;
+        color: lightgrey;
+        text-align: center;
+        padding-top: 30%;
+    }
+}

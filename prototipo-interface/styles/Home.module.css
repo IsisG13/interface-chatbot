@@ -1,3 +1,7 @@
+.main {
+  width: 90%;
+}
+
 .main img {
   padding-top: 6rem;
   width: 29%;
@@ -36,6 +40,7 @@
 }
 
 .icon {
+    cursor: pointer;
     width: 2.5%;
     color: #a19f9f;
     margin-top: -8%;

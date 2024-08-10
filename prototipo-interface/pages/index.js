@@ -37,8 +37,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.main}>
-        <div className="">
+        <div>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVG2gpz84zCp-3Fr4zZxHgfLeqxgbe_JUZw&s" alt="Logo da PrefiroDelivery" />
           <h1>Entre na sua conta para começar.</h1>
         </div>
